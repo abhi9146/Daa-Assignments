@@ -30,3 +30,11 @@ int main(){
         cout<<x<<" ";
     }
 }
+
+/** 
+  Output:
+  Enter number of elements in array: 5
+Enter array elements: 23 454 12 45 1
+Array elements After Sorting: 1 12 23 45 454
+
+*/
