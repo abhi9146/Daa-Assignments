@@ -40,3 +40,12 @@ int main(){
         cout<<"\nNumber is present "<<endl;
     }
 }
+
+/**
+ Output :
+Enter number of elements in array: 5
+Enter array elements: 34 23 564 23 12
+Enter number to search: 43
+Number is Not present
+
+**/
