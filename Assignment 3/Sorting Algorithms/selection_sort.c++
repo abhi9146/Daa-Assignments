@@ -11,9 +11,7 @@ void selection_Sort(int arr[], int n) {
             }
         }
         if (minIndex != i) {
-            int temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = temp;
+           swap(arr[i],arr[minIndex]);
         }
     }
 }

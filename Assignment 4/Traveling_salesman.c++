@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int travllingSalesmanProblem(vector<vector<int>>&graph, int s,int n)
-{
+int travllingSalesmanProblem(vector<vector<int>>&graph, int s,int n){
     vector<int> vertex;
     for (int i = 0; i < n; i++)
         if (i != s)
@@ -19,8 +18,7 @@ int travllingSalesmanProblem(vector<vector<int>>&graph, int s,int n)
         current_pathweight += graph[k][s];
         min_path = min(min_path, current_pathweight);
  
-    } while (
-        next_permutation(vertex.begin(), vertex.end()));
+    } while (next_permutation(vertex.begin(), vertex.end()));
  
     return min_path;
 }

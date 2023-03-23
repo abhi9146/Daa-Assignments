@@ -12,7 +12,7 @@ void Insert_at_end(){
       int val;
       cout<<"Enter Element to insert in linked list : "<<endl;
       cin>>val;
-      struct node* temp=(struct node *)malloc(sizeof(struct node));
+      struct node* temp=new node;
       
       temp->data=val;
       temp->next=NULL;
