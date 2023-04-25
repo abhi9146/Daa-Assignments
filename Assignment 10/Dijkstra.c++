@@ -1,5 +1,5 @@
-#include <limits.h>
-#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
 #define V 9
 
 int minDistance(int dist[], bool sptSet[]){
@@ -15,7 +15,7 @@ int minDistance(int dist[], bool sptSet[]){
 int printSolution(int dist[], int n){
 	printf("Vertex Distance from Source\n");
 	for (int i = 0; i < V; i++)
-		printf("%d \t\t %d\n", i, dist[i]);
+		cout<<i<<" --> "<< dist[i]<<endl;;
 }
 
 
@@ -58,14 +58,14 @@ int main(){
 /*
 Output:
 Vertex Distance from Source
-0                0
-1                4
-2                12
-3                19
-4                21
-5                11
-6                9
-7                8
-8                14
+0 --> 0
+1 --> 4
+2 --> 12
+3 --> 19
+4 --> 21
+5 --> 11
+6 --> 9
+7 --> 8
+8 --> 14
 
 */
