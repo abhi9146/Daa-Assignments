@@ -12,8 +12,7 @@ void print(vector<vector<int>>dist){
 	for (int i = 0; i < V; i++) {
 		for (int j = 0; j < V; j++) {
 			if (dist[i][j] == INF)
-				cout << "INF"
-					<< " ";
+				cout << "INF"<< " ";
 			else
 				cout << dist[i][j] << " ";
 		}
@@ -25,14 +24,12 @@ void FWA(vector<vector<int>>dist){
   int V=dist.size();
 	int i, j, k;
 	for (k = 0; k < V; k++) {
-		for (i = 0; i < V; i++) {
-			for (j = 0; j < V; j++) {
-				if (dist[i][j] > (dist[i][k] + dist[k][j])
-					&& (dist[k][j] != INF
-						&& dist[i][k] != INF))
-					dist[i][j] = dist[i][k] + dist[k][j];
-			}
-		}
+	 for (i = 0; i < V; i++) {
+	  for (j = 0; j < V; j++) {
+		if (dist[i][j] > (dist[i][k] + dist[k][j]) && (dist[k][j] != INF && dist[i][k] != INF))
+			dist[i][j] = dist[i][k] + dist[k][j];
+		 }
+	  }
 	}
 	print(dist);
 }
