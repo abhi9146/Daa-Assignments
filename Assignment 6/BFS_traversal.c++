@@ -1,28 +1,51 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define ll long long
 
-void solve(){
-	ll n;cin>>n;
-	vector<ll>a(n),b(n);
-	
-	for(int i=0;i<n;i++) cin>>a[i];
-	for(int i=0;i<n;i++) cin>>b[i];
-	
-	ll i=0;
-	for(i=0;i<n;i++){
-		if(a[i]!=b[i]) break;
-	}
-	ll j=i;
-	while(i>0 and b[i]>=b[i-1]) i--;
-	while(j<n-1 and b[j]<=b[j+1]) j++;
-	
-	//if(i==0) and a[0]<=a[1] 
-	ll len=j-i;
-	cout<<i+1<<" "<<j+1<<endl;
+void BFS(int n,vector<int>adj[],int start){
+    vector<int>vis(n,0);
+    queue<int>q;
+
+    q.push(start);
+    vis[start]=1;
+
+    while(!q.empty()){
+      auto x=q.front();
+      q.pop();
+      cout<<x<<" ";
+      for(auto it:adj[x]){
+        if(!vis[it]){
+            vis[it]=1;
+            q.push(it);
+        }
+      }
+    }
+    cout<<endl;
+    return;
 }
 int main(){
-   int t;cin>>t;
-   while(t--) solve();
+   int n,m;
+   cout<<"Enter number of nodes and edges : "<<endl;;
+   cin>>n>>m;
+
+   vector<int>adj[n+1];
+   for(int i=0;i<m;i++){
+      int x,y;
+      cin>>x>>y;
+      adj[y].push_back(x);
+      adj[x].push_back(y);
+   }
+   int start=0;
+   cout<<"Enter start node : ";
+   cin>>start;
+   BFS(n,adj,start);
 }
 
+// Output :
+// Enter number of nodes and edges : 
+// 5 4
+// 0 1 
+// 0 2
+// 0 3
+// 2 4
+// Enter start node : 0
+// 0 1 2 3 4
